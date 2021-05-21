@@ -1,0 +1,49 @@
+{
+  "name": "Insurance",
+  "fields": [
+    {
+      "fieldName": "sequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "focal",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "preAuthRef",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "coverage",
+      "otherEntityRelationshipName": "insurance",
+      "relationshipName": "coverage",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "claimResponse",
+      "otherEntityRelationshipName": "insurance",
+      "relationshipName": "claimResponse",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "claim",
+      "otherEntityRelationshipName": "insurances",
+      "relationshipName": "claim"
+    }
+  ],
+  "entityTableName": "insurance",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102506"
+}

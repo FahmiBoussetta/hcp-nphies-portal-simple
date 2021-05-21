@@ -1,0 +1,8 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "EligibilityPurposeEnum": {
+      "null": "",
+      "Todo": "Todo"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Patient",
+  "fields": [
+    {
+      "fieldName": "guid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "forceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "residentNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "passportNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationalHealthId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iqama",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "religion",
+      "fieldType": "ReligionEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "AdministrativeGenderEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "MaritalStatusEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "contacts",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "address",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "humanName",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "names"
+    }
+  ],
+  "entityTableName": "patient",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102538"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Accident",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "AccidentTypeEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "accident",
+      "relationshipName": "location",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "accident",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102507"
+}

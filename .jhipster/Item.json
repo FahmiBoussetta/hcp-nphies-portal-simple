@@ -1,0 +1,141 @@
+{
+  "name": "Item",
+  "fields": [
+    {
+      "fieldName": "sequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isPackage",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "tax",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "payerShare",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "patientShare",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "careTeamSequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transportationSRCA",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imaging",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "laboratory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "medicalDevice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oralHealthIP",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oralHealthOP",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "procedure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "services",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "medicationCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "servicedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "servicedDateStart",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "servicedDateEnd",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "unitPrice",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "factor",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bodySite",
+      "fieldType": "BodySiteEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "subSite",
+      "fieldType": "SubSiteEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "diagnosisSequence",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "diagnosisSequence"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "informationSequence",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "informationSequence"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "referenceIdentifier",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "udi"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "detailItem",
+      "otherEntityRelationshipName": "item",
+      "relationshipName": "details"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "claim",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "claim"
+    }
+  ],
+  "entityTableName": "item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102508"
+}

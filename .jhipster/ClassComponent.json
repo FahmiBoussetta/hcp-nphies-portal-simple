@@ -1,0 +1,36 @@
+{
+  "name": "ClassComponent",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ClassTypeEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "coverage",
+      "otherEntityRelationshipName": "classComponents",
+      "relationshipName": "coverage"
+    }
+  ],
+  "entityTableName": "class_component",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102524"
+}

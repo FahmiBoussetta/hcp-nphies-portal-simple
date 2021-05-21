@@ -1,0 +1,25 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "suffixes": {
+      "home": {
+        "title": "Suffixes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Suffixes",
+        "createOrEditLabel": "Create or edit a Suffixes",
+        "notFound": "No Suffixes found"
+      },
+      "created": "A new Suffixes is created with identifier {{ param }}",
+      "updated": "A Suffixes is updated with identifier {{ param }}",
+      "deleted": "A Suffixes is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Suffixes {{ id }}?"
+      },
+      "detail": {
+        "title": "Suffixes"
+      },
+      "id": "ID",
+      "suffix": "Suffix",
+      "human": "Human"
+    }
+  }
+}

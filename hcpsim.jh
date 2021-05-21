@@ -1,0 +1,841 @@
+
+application {
+  config {
+    baseName hcpNphiesPortalSimple,
+    applicationType monolith,
+    packageName com.platformsandsolutions.hcpnphiesportalsimple,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework react
+  }
+  entities *
+}
+
+entity AckErrorMessages {
+	message String
+}
+
+entity ClaimErrorMessages {
+	message String
+}
+
+entity CRErrorMessages {
+	message String
+}
+
+entity ComErrorMessages {
+	message String
+}
+
+entity CovEliErrorMessages {
+	message String
+}
+
+entity CovEliRespErrorMessages {
+	message String
+}
+
+entity OpeOutErrorMessages {
+	message String
+}
+
+entity PayNotErrorMessages {
+	message String
+}
+
+entity DiagnosisSequence {
+    diagSeq Integer
+}
+
+entity InformationSequence {
+    infSeq Integer
+}
+
+entity AdjudicationNotes {
+    note String
+}
+
+entity AdjudicationDetailNotes {
+    note String
+}
+
+entity AdjudicationSubDetailNotes {
+    note String
+}
+
+entity Givens {
+    given String
+}
+
+entity Prefixes {
+    prefix String
+}
+
+entity Suffixes {
+    suffix String
+}
+
+entity Texts {
+    textName String
+}
+
+entity ListCommunicationMediumEnum {
+    cm CommunicationMediumEnum
+}
+
+entity ListCommunicationReasonEnum {
+    cr CommunicationReasonEnum
+}
+
+entity ListEligibilityPurposeEnum {
+    erp EligibilityPurposeEnum
+}
+
+entity ListRoleCodeEnum {
+    r RoleCodeEnum
+}
+
+entity ListSpecialtyEnum {
+    s SpecialtyEnum
+}
+
+entity Acknowledgement {
+	value String,
+	system String,
+    parsed String
+}
+
+entity Address {
+	addressLine String,
+	city String,
+	district String,
+	state String,
+	postalCode String,
+	country String
+}
+
+entity Claim {
+	guid String,
+    isQueued Boolean,
+    parsed String,
+	identifier String,
+    use Use,
+    type ClaimTypeEnum,
+    subType ClaimSubTypeEnum,
+	eligibilityOffline String,
+    eligibilityOfflineDate Instant,
+    authorizationOfflineDate Instant,
+    billableStart Instant,
+    billableEnd Instant,
+    priority PriorityEnum,
+    fundsReserve FundsReserveEnum
+}
+
+entity Related {
+	relationShip ClaimRelationshipEnum
+}
+
+entity Payee {
+	type PayeeTypeEnum
+}
+
+entity CareTeam {
+	sequence Integer,
+	role CareTeamRoleEnum
+}
+
+entity Diagnosis {
+	sequence Integer,
+	diagnosis String,
+	type DiagnosisTypeEnum,
+	onAdmission DiagnosisOnAdmissionEnum
+}
+
+entity Insurance {
+	sequence Integer,
+	focal Boolean,
+	preAuthRef String
+}
+
+entity Accident {
+	date Instant,
+	type AccidentTypeEnum
+}
+
+entity Item {
+	sequence Integer,
+	isPackage Boolean,
+    tax BigDecimal,
+    payerShare BigDecimal,
+    patientShare BigDecimal,
+	careTeamSequence Integer,
+	transportationSRCA String,
+	imaging String,
+	laboratory String,
+	medicalDevice String,
+	oralHealthIP String,
+	oralHealthOP String,
+	procedure String,
+	services String,
+	medicationCode String,
+	servicedDate Instant,
+	servicedDateStart Instant,
+	servicedDateEnd Instant,
+	quantity Integer,
+	unitPrice Integer,
+    factor BigDecimal,
+    bodySite BodySiteEnum,
+    subSite SubSiteEnum
+}
+
+entity DetailItem {
+	sequence Integer,
+    tax BigDecimal,
+	transportationSRCA String,
+	imaging String,
+	laboratory String,
+	medicalDevice String,
+	oralHealthIP String,
+	oralHealthOP String,
+	procedure String,
+	services String,
+	medicationCode String,
+	quantity Integer,
+	unitPrice Integer
+}
+
+entity SubDetailItem {
+	sequence Integer,
+    tax BigDecimal,
+	transportationSRCA String,
+	imaging String,
+	laboratory String,
+	medicalDevice String,
+	oralHealthIP String,
+	oralHealthOP String,
+	procedure String,
+	services String,
+	medicationCode String,
+	quantity Integer,
+	unitPrice Integer
+}
+
+entity ClaimResponse {
+	value String,
+	system String,
+    parsed String,
+    outcome String
+}
+
+entity AdjudicationItem {
+	outcome String,
+	sequence Integer
+}
+
+entity AdjudicationDetailItem {
+	sequence Integer
+}
+
+entity AdjudicationSubDetailItem {
+	sequence Integer
+}
+
+entity Adjudication {
+	category String,
+	reason String,
+	amount Integer,
+    value BigDecimal
+}
+
+entity Total {
+	category String,
+	amount Integer
+}
+
+entity Communication {
+	guid String,
+    isQueued Boolean,
+    parsed String,
+	identifier String,
+    priority CommunicationPriorityEnum
+}
+
+entity Attachment {
+	contentType String,
+	title String,
+    language LanguageEnum,
+    isData Boolean,
+    dataFile Blob,
+    url String,
+    attachmentSize Integer,
+    hash Blob
+}
+
+entity Payload {
+	contentString String
+}
+
+entity Note {
+	text String,
+	author String,
+	time Instant
+}
+
+entity CommunicationRequest {
+	value String,
+	system String,
+    parsed String,
+    limitDate Instant
+}
+
+entity Contact {
+	phone String,
+	email String,
+	mobile String,
+	url String
+}
+
+entity Coverage {
+	guid String,
+    forceId String,
+	coverageType CoverageTypeEnum,
+	subscriberId String,
+	dependent String,
+	relationShip RelationShipEnum,
+	network String,
+    subrogation Boolean
+}
+
+entity ClassComponent {
+	type ClassTypeEnum,
+	value String,
+    name String,
+}
+
+entity CostToBeneficiaryComponent {
+	type CostToBeneficiaryTypeEnum,
+    isMoney Boolean,
+    value BigDecimal
+}
+
+entity ExemptionComponent {
+	type ExemptionTypeEnum,
+    start Instant,
+    end Instant
+}
+
+entity CoverageEligibilityRequest {
+	guid String,
+    parsed String,
+    priority PriorityEnum,
+	identifier String,
+	servicedDate Instant,
+	servicedDateEnd Instant,
+}
+
+entity CoverageEligibilityResponse {
+	value String,
+	system String,
+    parsed String,
+    outcome String,
+    serviced Instant,
+    servicedEnd Instant,
+    disposition String,
+    notInforceReason String
+}
+
+entity ResponseInsurance {
+	notInforceReason String,
+	inforce Boolean,
+    benefitStart Instant,
+    benefitEnd Instant,
+	notInforceReason String,
+	notInforceReason String,
+}
+
+entity ResponseInsuranceItem {
+	category String,
+	excluded Boolean,
+	name String,
+	description String,
+	network String,
+	unit String,
+	term String
+}
+
+entity InsuranceBenefit {
+	allowed String,
+	used String
+}
+
+entity Encounter {
+	guid String,
+    forceId String,
+	identifier String,
+	encounterClass EncounterClassEnum,
+	start Instant,
+	end Instant,
+	serviceType ServiceTypeEnum,
+	priority ActPriorityEnum
+}
+
+entity Hospitalization {
+	admitSource AdmitSourceEnum,
+	reAdmission ReAdmissionEnum,
+	dischargeDisposition DischargeDispositionEnum
+}
+
+entity HumanName {
+	family String
+}
+
+entity Location {
+	guid String,
+	identifier String,
+    type LocationTypeEnum
+}
+
+entity OperationOutcome {
+	value String,
+	system String,
+    parsed String
+}
+
+entity Organization {
+	guid String,
+    forceId String,
+	organizationLicense String,
+    baseUrl String,
+    organizationType OrganizationTypeEnum,
+    name String
+}
+
+entity Patient {
+	guid String,
+    forceId String,
+	residentNumber String,
+	passportNumber String,
+	nationalHealthId String,
+	iqama String,
+	religion ReligionEnum,
+	gender AdministrativeGenderEnum,
+	start Instant,
+	end Instant,
+	maritalStatus MaritalStatusEnum
+}
+
+entity PaymentNotice {
+	guid String,
+    parsed String,
+    identifier String,
+    paymentDate Instant,
+    amount BigDecimal,
+    paymentStatus PaymentStatusEnum
+}
+
+entity PaymentReconciliation {
+	value String,
+	system String,
+    parsed String,
+    periodStart Instant,
+    periodEnd Instant,
+    outcome String,
+    disposition String,
+    paymentAmount BigDecimal,
+    paymentIdentifier String
+}
+
+entity ReconciliationDetailItem {
+	identifier String,
+	predecessor String,
+    type String,
+    date Instant,
+    amount BigDecimal
+}
+
+entity Practitioner {
+	guid String,
+    forceId String,
+	practitionerLicense String,
+	gender AdministrativeGenderEnum
+}
+
+entity PractitionerRole {
+	guid String,
+    forceId String,
+	start Instant,
+	end Instant
+}
+
+entity ReferenceIdentifier {
+	ref String,
+	idValue String,
+	identifier String,
+	display String
+}
+
+entity SupportingInfo {
+	sequence Integer,
+	codeLOINC String,
+    category SupportingInfoCategoryEnum,
+    codeVisit SupportingInfoCodeVisitEnum,
+    codeFdiOral SupportingInfoCodeFdiEnum,
+	timing Instant,
+	timingEnd Instant,
+    valueBoolean Boolean,
+    valueString String,
+    reason SupportingInfoReasonEnum,
+    reasonMissingTooth SupportingInfoReasonMissingToothEnum
+}
+
+entity Quantity {
+	value BigDecimal,
+    unit String
+}
+
+entity Task {
+	guid String,
+    isQueued Boolean,
+    parsed String,
+    identifier String,
+    code TaskCodeEnum,
+    description String,
+    focus String,
+    reasonCode TaskReasonCodeEnum
+}
+
+entity TaskInput {
+    inputInclude ResourceTypeEnum,
+    inputExclude ResourceTypeEnum,
+	inputIncludeMessage EventCodingEnum,
+	inputExcludeMessage EventCodingEnum,
+    inputCount Integer,
+	inputStart Instant,
+	inputEnd Instant,
+    inputLineItem Integer
+}
+
+entity TaskResponse {
+	value String,
+	system String,
+    parsed String,
+    status String
+}
+
+entity TaskOutput {
+	status String,
+    errorOutput String
+}
+
+enum Use {
+    Claim(claim), PreAuthorization(preauthorization), Predetermination(predetermination)
+}
+
+enum ClaimTypeEnum {
+    Institutional(institutional), Oral(oral), Pharmacy(pharmacy), Professional(professional), Vision(vision)
+}
+
+enum ClaimSubTypeEnum {
+	Todo
+}
+
+enum PriorityEnum {
+	Todo
+}
+
+enum FundsReserveEnum {
+	Todo
+}
+
+enum ClaimRelationshipEnum {
+	Todo
+}
+
+enum PayeeTypeEnum {
+	Todo
+}
+
+enum CareTeamRoleEnum {
+	Todo
+}
+
+enum DiagnosisTypeEnum {
+	Todo
+}
+
+enum DiagnosisOnAdmissionEnum {
+	Todo
+}
+
+enum AccidentTypeEnum {
+	Todo
+}
+
+enum BodySiteEnum {
+	Todo
+}
+
+enum SubSiteEnum {
+	Todo
+}
+
+enum CommunicationPriorityEnum {
+	Todo
+}
+
+enum CommunicationMediumEnum {
+	Todo
+}
+
+enum CommunicationReasonEnum {
+	Todo
+}
+
+enum LanguageEnum {
+	Todo
+}
+
+enum CoverageTypeEnum {
+	Todo
+}
+
+enum RelationShipEnum {
+	Todo
+}
+
+enum ClassTypeEnum {
+	Todo
+}
+
+enum CostToBeneficiaryTypeEnum {
+	Todo
+}
+
+enum ExemptionTypeEnum {
+	Todo
+}
+
+enum EligibilityPurposeEnum {
+	Todo
+}
+
+enum EncounterClassEnum {
+	Todo
+}
+
+enum ServiceTypeEnum {
+	Todo
+}
+
+enum ActPriorityEnum {
+	Todo
+}
+
+enum AdmitSourceEnum {
+	Todo
+}
+
+enum ReAdmissionEnum {
+	Todo
+}
+
+enum DischargeDispositionEnum {
+	Todo
+}
+
+enum LocationTypeEnum {
+	Todo
+}
+
+enum OrganizationTypeEnum {
+	Todo
+}
+
+enum ReligionEnum {
+	Todo
+}
+
+enum AdministrativeGenderEnum {
+	Todo
+}
+
+enum MaritalStatusEnum {
+	Todo
+}
+
+enum PaymentStatusEnum {
+	Todo
+}
+
+enum RoleCodeEnum {
+	Todo
+}
+
+enum SpecialtyEnum {
+	Todo
+}
+
+enum SupportingInfoCategoryEnum {
+	Todo
+}
+
+enum SupportingInfoCodeVisitEnum {
+	Todo
+}
+
+enum SupportingInfoCodeFdiEnum {
+	Todo
+}
+
+enum SupportingInfoReasonEnum {
+	Todo
+}
+
+enum SupportingInfoReasonMissingToothEnum {
+	Todo
+}
+
+enum TaskCodeEnum {
+	Todo
+}
+
+enum TaskReasonCodeEnum {
+	Todo
+}
+
+enum ResourceTypeEnum {
+	Todo
+}
+
+enum EventCodingEnum {
+	Todo
+}
+
+relationship OneToOne {
+  Claim{encounter} to Encounter
+  Claim{eligibilityResponse} to CoverageEligibilityResponse
+  Claim{patient} to Patient
+  Claim{provider} to Organization
+  Claim{insurer} to Organization
+  Claim{prescription} to ReferenceIdentifier
+  Claim{originalPrescription} to ReferenceIdentifier
+  Claim{payee} to Payee
+  Claim{referral} to ReferenceIdentifier
+  Claim{facility} to Location
+  Claim{accident} to Accident
+  Related{claimReference} to ReferenceIdentifier
+  Payee{partyPatient} to Patient
+  Payee{partyOrganization} to Organization
+  CareTeam{provider} to Practitioner
+  CareTeam{providerRole} to PractitionerRole
+  Insurance{coverage} to Coverage
+  Insurance{claimResponse} to ClaimResponse
+  Accident{location} to Address
+  Communication{subject} to Patient
+  Communication{sender} to Organization
+  Communication{recipient} to Organization
+  Communication{about} to Claim
+  Payload{contentAttachment} to Attachment
+  Payload{contentReference} to ReferenceIdentifier
+  CommunicationRequest{subject} to Patient
+  CommunicationRequest{about} to Claim
+  CommunicationRequest{sender} to Organization
+  Contact{name} to HumanName
+  Coverage{subscriberPatient} to Patient
+  Coverage{beneficiary} to Patient
+  Coverage{payor} to Organization
+  CoverageEligibilityRequest{patient} to Patient
+  CoverageEligibilityRequest{provider} to Organization
+  CoverageEligibilityRequest{insurer} to Organization
+  CoverageEligibilityRequest{facility} to Location
+  CoverageEligibilityResponse{patient} to Patient
+  CoverageEligibilityResponse{insurer} to Organization
+  ResponseInsurance{coverage} to Coverage
+  Encounter{subject} to Patient
+  Encounter{hospitalization} to Hospitalization
+  Encounter{serviceProvider} to Organization
+  Hospitalization{origin} to Organization
+  Location{managingOrganization} to Organization
+  Organization{address} to Address
+  Patient{contacts} to Contact
+  Patient{address} to Address
+  PaymentNotice{payment} to PaymentReconciliation{paymentNotice}
+  PaymentReconciliation{paymentIssuer} to Organization
+  ReconciliationDetailItem{request} to Claim
+  ReconciliationDetailItem{submitter} to Organization
+  ReconciliationDetailItem{response} to ClaimResponse
+  ReconciliationDetailItem{payee} to Organization
+  PractitionerRole{practitioner} to Practitioner
+  PractitionerRole{organization} to Organization
+  SupportingInfo{valueQuantity} to Quantity
+  SupportingInfo{valueAttachment} to Attachment
+  SupportingInfo{valueReference} to ReferenceIdentifier
+  Task{requester} to Organization
+  Task{owner} to Organization
+  TaskInput{inputOrigResponse} to ReferenceIdentifier
+  TaskOutput{response} to ReferenceIdentifier
+}
+
+relationship ManyToOne {
+  AckErrorMessages{acknowledgement} to Acknowledgement{errors}
+  ClaimErrorMessages{claim} to Claim{errors}
+  Related{claim} to Claim{relateds}
+  CareTeam{claim} to Claim{careTeam}
+  SupportingInfo{claim} to Claim{supportingInfos}
+}
+
+relationship OneToMany {
+  Claim{diagnoses} to Diagnosis{claim}
+  Claim{insurances} to Insurance{claim}
+  Claim{items} to Item{claim}
+  Item{diagnosisSequence} to DiagnosisSequence{item} 
+  Item{informationSequence} to InformationSequence{item}
+  Item{udi} to ReferenceIdentifier{item}
+  Item{details} to DetailItem{item}
+  DetailItem{udi} to ReferenceIdentifier{detailItem}
+  DetailItem{subDetails} to SubDetailItem{detailItem}
+  SubDetailItem{udi} to ReferenceIdentifier{subDetailItem}
+  ClaimResponse{errors} to CRErrorMessages{claimResponse}
+  ClaimResponse{items} to AdjudicationItem{claimResponse}
+  ClaimResponse{total} to Total{claimResponse}
+  AdjudicationItem{notes} to AdjudicationNotes{adjudicationItem}
+  AdjudicationItem{adjudications} to Adjudication{adjudicationItem}
+  AdjudicationItem{details} to AdjudicationDetailItem{adjudicationItem}
+  AdjudicationDetailItem{notes} to AdjudicationDetailNotes{adjudicationDetailItem}
+  AdjudicationDetailItem{adjudications} to Adjudication{adjudicationDetailItem}
+  AdjudicationDetailItem{subDetails} to AdjudicationSubDetailItem{adjudicationDetailItem}
+  AdjudicationSubDetailItem{notes} to AdjudicationSubDetailNotes{adjudicationSubDetailItem}
+  AdjudicationSubDetailItem{adjudications} to Adjudication{adjudicationSubDetailItem}
+  Communication{basedOn} to CommunicationRequest{communication}
+  Communication{medium} to ListCommunicationMediumEnum{communication}
+  Communication{reasonCode} to ListCommunicationReasonEnum{communication}
+  Communication{payload} to Payload{communication}
+  Communication{note} to Note{communication}
+  Communication{errors} to ComErrorMessages{communication}
+  CommunicationRequest{payload} to Payload{communicationRequest}
+  CommunicationRequest{note} to Note{communicationRequest}
+  Coverage{classComponents} to ClassComponent{coverage}
+  Coverage{costToBeneficiaryComponents} to CostToBeneficiaryComponent{coverage}
+  CostToBeneficiaryComponent{exceptions} to ExemptionComponent{costToBeneficiary}
+  CoverageEligibilityRequest{errors} to CovEliErrorMessages{coverageEligibilityRequest}
+  CoverageEligibilityRequest{purposes} to ListEligibilityPurposeEnum{coverageEligibilityRequest}
+  CoverageEligibilityRequest{coverages} to Coverage{coverageEligibilityRequest}
+  CoverageEligibilityResponse{errors} to CovEliRespErrorMessages{coverageEligibilityResponse}
+  CoverageEligibilityResponse{insurance} to ResponseInsurance{coverageEligibilityResponse}
+  ResponseInsurance{item} to ResponseInsuranceItem{responseInsurance}
+  ResponseInsuranceItem{benefit} to InsuranceBenefit{responseInsuranceItem}
+  HumanName{given} to Givens{human}
+  HumanName{prefix} to Prefixes{human}
+  HumanName{suffix} to Suffixes{human}
+  HumanName{text} to Texts{human}
+  OperationOutcome{errors} to OpeOutErrorMessages{operationOutcome}
+  Organization{contacts} to Contact{organization}
+  Patient{names} to HumanName{patient}
+  PaymentNotice{errors} to PayNotErrorMessages{paymentNotice}
+  PaymentReconciliation{detail} to ReconciliationDetailItem{paymentReconciliation}
+  Practitioner{names} to HumanName{practitioner}
+  PractitionerRole{codes} to ListRoleCodeEnum{practitionerRole}
+  PractitionerRole{specialties} to ListSpecialtyEnum{practitionerRole}
+  Task{inputs} to TaskInput{task}
+  TaskResponse{outputs} to TaskOutput{taskResponse}
+}

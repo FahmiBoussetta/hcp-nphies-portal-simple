@@ -1,0 +1,27 @@
+{
+  "name": "Suffixes",
+  "fields": [
+    {
+      "fieldName": "suffix",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "humanName",
+      "otherEntityRelationshipName": "suffix",
+      "relationshipName": "human"
+    }
+  ],
+  "entityTableName": "suffixes",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102452"
+}

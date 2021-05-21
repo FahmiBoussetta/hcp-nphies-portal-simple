@@ -1,0 +1,93 @@
+{
+  "name": "SupportingInfo",
+  "fields": [
+    {
+      "fieldName": "sequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "codeLOINC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "SupportingInfoCategoryEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "codeVisit",
+      "fieldType": "SupportingInfoCodeVisitEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "codeFdiOral",
+      "fieldType": "SupportingInfoCodeFdiEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "timing",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "timingEnd",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "valueBoolean",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "valueString",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "SupportingInfoReasonEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "reasonMissingTooth",
+      "fieldType": "SupportingInfoReasonMissingToothEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "quantity",
+      "otherEntityRelationshipName": "supportingInfo",
+      "relationshipName": "valueQuantity",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "attachment",
+      "otherEntityRelationshipName": "supportingInfo",
+      "relationshipName": "valueAttachment",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "referenceIdentifier",
+      "otherEntityRelationshipName": "supportingInfo",
+      "relationshipName": "valueReference",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "claim",
+      "otherEntityRelationshipName": "supportingInfos",
+      "relationshipName": "claim"
+    }
+  ],
+  "entityTableName": "supporting_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102545"
+}

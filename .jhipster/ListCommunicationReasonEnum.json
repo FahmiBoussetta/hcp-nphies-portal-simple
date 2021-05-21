@@ -1,0 +1,28 @@
+{
+  "name": "ListCommunicationReasonEnum",
+  "fields": [
+    {
+      "fieldName": "cr",
+      "fieldType": "CommunicationReasonEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "communication",
+      "otherEntityRelationshipName": "reasonCode",
+      "relationshipName": "communication"
+    }
+  ],
+  "entityTableName": "list_communication_reason_enum",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102455"
+}

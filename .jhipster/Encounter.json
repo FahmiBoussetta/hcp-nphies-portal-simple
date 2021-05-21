@@ -1,0 +1,73 @@
+{
+  "name": "Encounter",
+  "fields": [
+    {
+      "fieldName": "guid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "forceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identifier",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "encounterClass",
+      "fieldType": "EncounterClassEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "start",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "end",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "serviceType",
+      "fieldType": "ServiceTypeEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "ActPriorityEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "encounter",
+      "relationshipName": "subject",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "hospitalization",
+      "otherEntityRelationshipName": "encounter",
+      "relationshipName": "hospitalization",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "organization",
+      "otherEntityRelationshipName": "encounter",
+      "relationshipName": "serviceProvider",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "encounter",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102532"
+}

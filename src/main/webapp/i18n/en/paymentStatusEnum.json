@@ -1,0 +1,8 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "PaymentStatusEnum": {
+      "null": "",
+      "Todo": "Todo"
+    }
+  }
+}

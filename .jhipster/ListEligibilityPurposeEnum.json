@@ -1,0 +1,28 @@
+{
+  "name": "ListEligibilityPurposeEnum",
+  "fields": [
+    {
+      "fieldName": "erp",
+      "fieldType": "EligibilityPurposeEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "coverageEligibilityRequest",
+      "otherEntityRelationshipName": "purposes",
+      "relationshipName": "coverageEligibilityRequest"
+    }
+  ],
+  "entityTableName": "list_eligibility_purpose_enum",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102456"
+}

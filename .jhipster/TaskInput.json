@@ -1,0 +1,66 @@
+{
+  "name": "TaskInput",
+  "fields": [
+    {
+      "fieldName": "inputInclude",
+      "fieldType": "ResourceTypeEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "inputExclude",
+      "fieldType": "ResourceTypeEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "inputIncludeMessage",
+      "fieldType": "EventCodingEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "inputExcludeMessage",
+      "fieldType": "EventCodingEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "inputCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "inputStart",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "inputEnd",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "inputLineItem",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "referenceIdentifier",
+      "otherEntityRelationshipName": "taskInput",
+      "relationshipName": "inputOrigResponse",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "task",
+      "otherEntityRelationshipName": "inputs",
+      "relationshipName": "task"
+    }
+  ],
+  "entityTableName": "task_input",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102548"
+}

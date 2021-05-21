@@ -1,0 +1,8 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "CommunicationPriorityEnum": {
+      "null": "",
+      "Todo": "Todo"
+    }
+  }
+}

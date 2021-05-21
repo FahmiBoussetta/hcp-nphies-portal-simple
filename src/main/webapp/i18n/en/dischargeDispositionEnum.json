@@ -1,0 +1,8 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "DischargeDispositionEnum": {
+      "null": "",
+      "Todo": "Todo"
+    }
+  }
+}

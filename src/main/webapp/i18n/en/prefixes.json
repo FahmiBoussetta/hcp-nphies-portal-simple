@@ -1,0 +1,25 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "prefixes": {
+      "home": {
+        "title": "Prefixes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Prefixes",
+        "createOrEditLabel": "Create or edit a Prefixes",
+        "notFound": "No Prefixes found"
+      },
+      "created": "A new Prefixes is created with identifier {{ param }}",
+      "updated": "A Prefixes is updated with identifier {{ param }}",
+      "deleted": "A Prefixes is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Prefixes {{ id }}?"
+      },
+      "detail": {
+        "title": "Prefixes"
+      },
+      "id": "ID",
+      "prefix": "Prefix",
+      "human": "Human"
+    }
+  }
+}

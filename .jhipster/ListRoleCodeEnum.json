@@ -1,0 +1,28 @@
+{
+  "name": "ListRoleCodeEnum",
+  "fields": [
+    {
+      "fieldName": "r",
+      "fieldType": "RoleCodeEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "practitionerRole",
+      "otherEntityRelationshipName": "codes",
+      "relationshipName": "practitionerRole"
+    }
+  ],
+  "entityTableName": "list_role_code_enum",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102457"
+}
