@@ -1,0 +1,41 @@
+{
+  "name": "Diagnosis",
+  "fields": [
+    {
+      "fieldName": "sequence",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "diagnosis",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "DiagnosisTypeEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "onAdmission",
+      "fieldType": "DiagnosisOnAdmissionEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "claim",
+      "otherEntityRelationshipName": "diagnoses",
+      "relationshipName": "claim"
+    }
+  ],
+  "entityTableName": "diagnosis",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102505"
+}

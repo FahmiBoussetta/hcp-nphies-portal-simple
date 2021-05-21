@@ -1,0 +1,25 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "texts": {
+      "home": {
+        "title": "Texts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Texts",
+        "createOrEditLabel": "Create or edit a Texts",
+        "notFound": "No Texts found"
+      },
+      "created": "A new Texts is created with identifier {{ param }}",
+      "updated": "A Texts is updated with identifier {{ param }}",
+      "deleted": "A Texts is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Texts {{ id }}?"
+      },
+      "detail": {
+        "title": "Texts"
+      },
+      "id": "ID",
+      "textName": "Text Name",
+      "human": "Human"
+    }
+  }
+}

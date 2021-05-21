@@ -1,0 +1,42 @@
+{
+  "name": "CostToBeneficiaryComponent",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "CostToBeneficiaryTypeEnum",
+      "fieldValues": "Todo"
+    },
+    {
+      "fieldName": "isMoney",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "exemptionComponent",
+      "otherEntityRelationshipName": "costToBeneficiary",
+      "relationshipName": "exceptions"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "coverage",
+      "otherEntityRelationshipName": "costToBeneficiaryComponents",
+      "relationshipName": "coverage"
+    }
+  ],
+  "entityTableName": "cost_to_beneficiary_component",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102525"
+}

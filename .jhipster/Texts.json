@@ -1,0 +1,27 @@
+{
+  "name": "Texts",
+  "fields": [
+    {
+      "fieldName": "textName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "humanName",
+      "otherEntityRelationshipName": "text",
+      "relationshipName": "human"
+    }
+  ],
+  "entityTableName": "texts",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102453"
+}

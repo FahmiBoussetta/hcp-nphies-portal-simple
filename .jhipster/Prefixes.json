@@ -1,0 +1,27 @@
+{
+  "name": "Prefixes",
+  "fields": [
+    {
+      "fieldName": "prefix",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "humanName",
+      "otherEntityRelationshipName": "prefix",
+      "relationshipName": "human"
+    }
+  ],
+  "entityTableName": "prefixes",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102451"
+}

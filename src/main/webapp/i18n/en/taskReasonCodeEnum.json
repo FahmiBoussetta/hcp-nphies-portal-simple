@@ -1,0 +1,8 @@
+{
+  "hcpNphiesPortalSimpleApp": {
+    "TaskReasonCodeEnum": {
+      "null": "",
+      "Todo": "Todo"
+    }
+  }
+}

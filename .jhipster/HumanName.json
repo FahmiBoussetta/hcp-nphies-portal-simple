@@ -1,0 +1,57 @@
+{
+  "name": "HumanName",
+  "fields": [
+    {
+      "fieldName": "family",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "givens",
+      "otherEntityRelationshipName": "human",
+      "relationshipName": "given"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "prefixes",
+      "otherEntityRelationshipName": "human",
+      "relationshipName": "prefix"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "suffixes",
+      "otherEntityRelationshipName": "human",
+      "relationshipName": "suffix"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "texts",
+      "otherEntityRelationshipName": "human",
+      "relationshipName": "text"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "names",
+      "relationshipName": "patient"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "practitioner",
+      "otherEntityRelationshipName": "names",
+      "relationshipName": "practitioner"
+    }
+  ],
+  "entityTableName": "human_name",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102534"
+}

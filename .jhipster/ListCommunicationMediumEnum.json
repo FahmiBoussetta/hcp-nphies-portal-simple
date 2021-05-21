@@ -1,0 +1,28 @@
+{
+  "name": "ListCommunicationMediumEnum",
+  "fields": [
+    {
+      "fieldName": "cm",
+      "fieldType": "CommunicationMediumEnum",
+      "fieldValues": "Todo"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "communication",
+      "otherEntityRelationshipName": "medium",
+      "relationshipName": "communication"
+    }
+  ],
+  "entityTableName": "list_communication_medium_enum",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["hcpNphiesPortalSimple"],
+  "changelogDate": "20210521102454"
+}
